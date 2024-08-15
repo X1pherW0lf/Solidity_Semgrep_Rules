@@ -1,0 +1,7 @@
+rules:
+  - id: delegatecall-in-loop
+    languages:
+      - solidity
+    severity: WARNING
+    message: Use of delegatecall inside a loop detected.
+    pattern-regex: (for|while|do)[^\(]?(\([^\)]*\))?.?\{(([^\}]*\n)*(([^\}]*\{)([^\{\}]*\n)*([^\{\}]*\}[^\}]*)\n))*[^\}]*delegatecall
