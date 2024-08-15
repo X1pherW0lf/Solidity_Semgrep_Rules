@@ -1,0 +1,11 @@
+rules:
+  - id: unsafe-token-transfer
+    languages:
+      - solidity
+    severity: WARNING
+    message: >
+      Using `transfer()` or `transferFrom()` with tokens  can be unsafe because some tokens may not adhere to the ERC20 standard strictly. Prefer using OpenZeppelin's `SafeERC20` library which provides safe wrappers around these methods to handle tokens that don't conform to the standard.
+    patterns:
+      - pattern-either: 
+        - pattern: $TOKEN.transfer(...)
+        - pattern: $TOKEN.transferFrom(...)
