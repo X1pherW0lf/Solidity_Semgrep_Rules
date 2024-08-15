@@ -1,0 +1,9 @@
+rules:
+  - id: unsafe-tx-origin
+    languages:
+      - solidity
+    severity: WARNING
+    message: >
+      Use of `tx.origin` is unsafe
+    patterns:
+      - pattern: tx.origin
