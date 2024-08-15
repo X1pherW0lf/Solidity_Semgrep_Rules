@@ -1,0 +1,11 @@
+rules:
+  - id: msg-value-in-loop
+    languages:
+      - solidity
+    severity: WARNING
+    message: Using `msg.value` in a loop is a dangerous pattern
+    pattern: msg.value
+    pattern-inside: |
+      for (...) {
+        ...
+      }
