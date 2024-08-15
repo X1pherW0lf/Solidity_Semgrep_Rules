@@ -4,8 +4,6 @@ rules:
       - solidity
     severity: WARNING
     message: Using `msg.value` in a loop is a dangerous pattern
-    pattern: msg.value
-    pattern-inside: |
-      for (...) {
-        ...
-      }
+    patterns:
+      - pattern-inside: for (...) {...}
+      - pattern: msg.value
