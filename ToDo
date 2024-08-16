@@ -5,3 +5,5 @@ uni slot0
 selfdestruct
 Centralization Risk
 deprecated function list
+floating pragma
+isContract
