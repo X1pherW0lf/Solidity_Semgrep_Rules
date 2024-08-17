@@ -1,0 +1,18 @@
+rules:
+  - id: using-iscontract
+    languages:
+      - solidity
+    severity: ERROR
+    message: >
+      isContract is not a reliable way to determine if a address is a EOA or
+      contract
+    patterns:
+      - pattern-either:
+          - pattern-regex: isContract\(
+          #- pattern: $X.isContract
+          #- pattern: isContract(...)  
+    metadata:
+      category: security
+      impact: MEDIUM
+      confidence: LOW
+      source_rule_url: https://medium.com/coinmonks/bypass-solidity-contract-size-check-c6e93396b722
