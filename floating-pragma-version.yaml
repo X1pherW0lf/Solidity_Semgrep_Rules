@@ -1,0 +1,15 @@
+rules:
+  - id: floating-pragma-version
+    languages:
+      - solidity
+    severity: ERROR
+    message: |
+      Avoid using floating pragmas version
+    patterns:
+      - pattern: |
+          pragma solidity ^$VERSION;
+    metadata:
+      category: security
+      confidence: MEDIUM
+      likelihood: MEDIUM
+      impact: LOW
