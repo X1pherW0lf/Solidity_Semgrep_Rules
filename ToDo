@@ -1,7 +1,7 @@
 //ecrecover
 block.timestamp for randomness
 chainlink stale
-uni slot0
+//uni slot0
 selfdestruct
 Centralization Risk
 deprecated function list
