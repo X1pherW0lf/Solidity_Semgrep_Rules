@@ -1,0 +1,15 @@
+rules:
+  - id: using-ecrecover
+    languages:
+      - solidity
+    severity: ERROR
+    message: >
+      use of **ecrecover** is vulnerable to signature malleability and check for
+      address(0) or use OZ's ECDSA 
+    patterns:
+      - pattern: ecrecover(...);
+    metadata:
+      category: security
+      confidence: LOW
+      likelihood: MEDIUM
+      impact: HIGH
