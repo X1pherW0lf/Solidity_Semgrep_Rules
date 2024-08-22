@@ -1,0 +1,15 @@
+rules:
+  - id: uniswap-slot0
+    languages:
+      - solidity
+    severity: ERROR
+    message: |
+      Usage of slot0 is extremely easy to manipulate
+    patterns:
+      - pattern: IUniswapV3Pool(...).slot0()
+    metadata:
+      category: security
+      confidence: MEDIUM
+      likelihood: HIGH
+      impact: HIGH
+      source_rule_url: https://solodit.xyz/issues/h-3-usage-of-slot0-is-extremely-easy-to-manipulate-sherlock-none-realwagmi-git
