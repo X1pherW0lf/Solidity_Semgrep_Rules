@@ -1,0 +1,16 @@
+rules:
+  - id: deprecated-chainlink-functions
+    languages:
+      - solidity
+    severity: ERROR
+    message: Use of deprecated Chainlink function
+    pattern-either:
+      - pattern: $X.latestAnswer()
+      - pattern: $X.getAnswer(...)
+      - pattern: $X.getTimestamp(...)
+      - pattern: $X.latestRound()
+      - pattern: $X.latestTimestamp()
+    metadata:
+      references:
+        - https://docs.chain.link/data-feeds/api-reference#latestanswer
+      category: security
