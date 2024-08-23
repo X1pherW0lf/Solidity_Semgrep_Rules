@@ -1,0 +1,23 @@
+rules:
+  - id: divide-before-multiply
+    patterns:
+      - pattern-either:
+          - pattern: ($X / $Y) * $Z
+          - pattern: ($X / $Y) * ($Z)
+          - pattern: $X / $Y * $Z
+          - pattern: $X / $Y * ($Z)
+          - pattern: $A * ($X / $Y) * $Z
+          - pattern: $A * ($X / $Y) / $Z
+          - pattern: ($A * $X / $Y) / $Z
+          - pattern: $A * ($X / $Y) * $Z / $W
+          - pattern: $A * $X / $Y * $Z / $W
+          - pattern: $A * ($B * $X / $Y) / $Z
+    message: Potential precision loss detected. Consider reordering operations to
+      multiply before divide.
+    languages:
+      - solidity
+    severity: WARNING
+    metadata:
+      category: security
+      impact: MEDIUM
+      confidence: MEDIUM
