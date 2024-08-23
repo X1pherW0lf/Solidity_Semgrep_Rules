@@ -1,0 +1,12 @@
+rules:
+  - id: year-not-always-365-days
+    pattern-either:
+      - pattern-regex: '(?i)year\s*=\s*.*365'
+      - pattern: 365 days
+    message: "A year not always 365 days, leap years have 366 days. Hard-coding 365 days can cause incorrect results."
+    languages: [solidity]
+    severity: WARNING
+    metadata:
+      category: correctness
+      impact: LOW
+      confidence: MEDIUM
