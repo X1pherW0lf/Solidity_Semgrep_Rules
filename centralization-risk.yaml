@@ -1,0 +1,25 @@
+rules:
+  - id: centralization-risk
+    pattern-either:
+      - pattern-regex: " onlyOwner "
+      - pattern-regex: " onlyRole\\("
+      - pattern-regex: " requiresAuth "
+      - pattern-regex: Owned[!(, ]
+      - pattern-regex: Ownable[!(, ]
+      - pattern-regex: Ownable2Step[!(, ]
+      - pattern-regex: AccessControl[!(, ]
+      - pattern-regex: AccessControlCrossChain[!(, ]
+      - pattern-regex: AccessControlEnumerable[!(, ]
+      - pattern-regex: Auth[!(, ]
+      - pattern-regex: RolesAuthority[!(, ]
+      - pattern-regex: MultiRolesAuthority[!(, ]
+    message: "Centralization Risk: Contracts have owners with privileged rights to
+      perform admin tasks and need to be trusted to not perform malicious
+      updates or drain funds."
+    languages:
+      - solidity
+    severity: WARNING
+    metadata:
+      category: security
+      impact: MEDIUM
+      confidence: MEDIUM
